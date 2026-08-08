@@ -1,30 +1,58 @@
-# 4u – Response Layer 7 (iki1uc)
+# WORK‑RESPO — Response Layer 7 (iki1uc)
 
-4u ist die 7. Response-Ebene im iki1uc-System.
-Sie ersetzt die alte RESPO-Achse durch ein neues, systemisches Modell:
+## Identität
+**Kern:** WORK‑RESPO  
+**Layer:** 7  
+**Signatur:** WRK‑7‑01‑A  
+**Pipeline:** 4‑01‑2  
+**Status:** Eigenständig, nicht geliehen
 
-OK / NOK / FLOW / BREAK / ECHO / VOID / ROOT
+---
 
-4u verbindet:
-- PX-TRIO (PX3 / PX6 / PX9)
-- PX12 / PX4 (Fusion + Achse)
-- SYS / SYS-x (System + Kreuzung)
-- 2me (Mirror-Return)
-- TEM (Zeit)
-- UI-SCANNER (Interface)
+## Achsen‑Definition
+WORK‑RESPO nutzt vier Achsen:
 
------------------------------------------
-# FUNKTION
+- **X‑Achse:** stable  
+- **IX‑Achse:** pure  
+- **XI‑Achse:** active  
+- **AIR‑Achse:** open  
 
-respo.OK     → Zustimmung  
-respo.NOK    → Ablehnung  
-respo.FLOW   → System fließt  
-respo.BREAK  → System bricht  
-respo.ECHO   → Spiegelung  
-respo.VOID   → Neutral  
-respo.ROOT   → Rückkehr
+Diese Achsen bestimmen Stabilität, Reinheit, Aktivität und Offenheit des Moduls.
 
------------------------------------------
-# STATUS
+---
 
-4u ist aktiv, eigenständig und vollständig iki1uc.
+## Pipeline‑Dock
+WORK‑RESPO ist vollständig kompatibel mit:
+
+- **Pipeline 4‑01‑2**
+- **MXU‑Sync**
+- **NC.sync**
+- **POOL‑System**
+
+---
+
+## Sync‑Status
+- **Drift:** 0  
+- **Ghost:** 0  
+- **Load:** ready  
+- **Save:** ready  
+- **Pool:** ready  
+
+WORK‑RESPO ist vollständig synchronisierbar und bewertbar.
+
+---
+
+## Zweck
+WORK‑RESPO dient als **Marktliebling‑Kern** im Response Layer 7.  
+Er erzeugt Stabilität, Reinheit und neutrale Führung im System.
+
+---
+
+## Bewertung
+WORK‑RESPO ist bereit für:
+
+- Achsen‑Analyse  
+- Pipeline‑Bewertung  
+- Marktliebling‑Status  
+- RESPO‑Score‑Ermittlung  
+
