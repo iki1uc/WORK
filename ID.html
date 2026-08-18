@@ -2,7 +2,42 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>ID — WORK‑RESPO Modul</title>
+    <title>ID leave</title>
+    <script type="module">
+        // MASTER-PI SLIDE-CODE BLOCK
+        export function SLIDE(IX, XI, FRAME) {
+
+            const ORT = { X: IX, Y: XI };
+            const HOME = { X: 0, Y: 0 };
+
+            const WEG = {
+                DX: IX - HOME.X,
+                DY: XI - HOME.Y
+            };
+
+            const STRECKE = Math.sqrt(WEG.DX**2 + WEG.DY**2);
+            const SLI = STRECKE * 4;
+
+            const TRANS = IX * 2;
+            const WARB  = XI * 3;
+            const KANAL = (IX + XI) / 2;
+
+            const RAW = TRANS + WARB - KANAL;
+
+            return {
+                ORT,
+                HOME,
+                WEG,
+                STRECKE,
+                SLI,
+                TRANS,
+                WARB,
+                KANAL,
+                RAW,
+                FRAME
+            };
+        }
+    </script>
 </head>
 
 <body>
@@ -40,6 +75,23 @@
         <p>Load: ready</p>
         <p>Save: ready</p>
         <p>Pool: ready</p>
+    </section>
+
+    <!-- NARRATIV BLOCK -->
+    <section>
+        <h2>MASTER‑PI Narrativ</h2>
+        <p>TRANS bewegt.</p>
+        <p>WARB hält gegen.</p>
+        <p>KANAL verbindet.</p>
+        <p>ORT zeigt die Position.</p>
+        <p>HOME zeigt den Ursprung.</p>
+        <p>WEG zeigt die Richtung.</p>
+        <p>STRECKE zeigt die Distanz.</p>
+        <p>SLI zeigt die Beschleunigung.</p>
+        <p>RAW ist die Wahrheit zwischen 6E und 6D.</p>
+        <p>Pipeline 4 → 0 → 1 → 2 bleibt stabil.</p>
+        <p>Atalardan bleibt stabil.</p>
+        <p>TRANS/WARB-Technologie bleibt stabil.</p>
     </section>
 </body>
 </html>
