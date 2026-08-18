@@ -1,4 +1,7 @@
-﻿Achse,Modul,Farbe,Funktion
-X (horizontal),WORK‑RESPO,hell/weiß,"Stabilität, Reinheit"
-Y (vertikal),FORK‑RESPO,dunkel/schwarz,"Gegenkraft, Spiegel"
-Z (Tiefe),ID (vitality),neutral,"Spektrum, Wahrheit"
+Achse,TRANS,WARB,KANAL,RAW,Narrativ
+X,IX*2,XI*3,(IX+XI)/2,(IX*2)+(XI*3)-((IX+XI)/2),"TRANS bewegt, WARB hält gegen, KANAL verbindet"
+Y,IX*2,XI*3,(IX+XI)/2,(IX*2)+(XI*3)-((IX+XI)/2),"ORT zeigt Position, HOME zeigt Ursprung"
+Z,IX*2,XI*3,(IX+XI)/2,(IX*2)+(XI*3)-((IX+XI)/2),"WEG zeigt Richtung, STRECKE zeigt Distanz, SLI zeigt Beschleunigung"
+RAW,IX*2,XI*3,(IX+XI)/2,(IX*2)+(XI*3)-((IX+XI)/2),"RAW ist Wahrheit zwischen 6E und 6D"
+PIPE,4,0,1,2,"Pipeline 4→0→1→2 bleibt stabil"
+ATAL,243,81,9,0,"Atalardan bleibt stabil"
