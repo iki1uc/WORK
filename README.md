@@ -1,58 +1,31 @@
-# WORK‑RESPO — Response Layer 7 (iki1uc)
+# Espresso‑Knutscher — RAW‑Vorgang
 
-## Identität
-**Kern:** WORK‑RESPO  
-**Layer:** 7  
-**Signatur:** WRK‑7‑01‑A  
-**Pipeline:** 4‑01‑2  
-**Status:** Eigenständig, nicht geliehen
-
----
-
-## Achsen‑Definition
-WORK‑RESPO nutzt vier Achsen:
-
-- **X‑Achse:** stable  
-- **IX‑Achse:** pure  
-- **XI‑Achse:** active  
-- **AIR‑Achse:** open  
-
-Diese Achsen bestimmen Stabilität, Reinheit, Aktivität und Offenheit des Moduls.
-
----
-
-## Pipeline‑Dock
-WORK‑RESPO ist vollständig kompatibel mit:
-
-- **Pipeline 4‑01‑2**
-- **MXU‑Sync**
-- **NC.sync**
-- **POOL‑System**
-
----
-
-## Sync‑Status
-- **Drift:** 0  
-- **Ghost:** 0  
-- **Load:** ready  
-- **Save:** ready  
-- **Pool:** ready  
-
-WORK‑RESPO ist vollständig synchronisierbar und bewertbar.
-
----
+**Typ:** RAW‑Process  
+**Signatur:** RAW‑EK‑01  
+**Layer:** 0 (Vor‑Schicht)  
+**Pipeline:** ungefiltert  
+**Status:** direkt, unverarbeitet
 
 ## Zweck
-WORK‑RESPO dient als **Marktliebling‑Kern** im Response Layer 7.  
-Er erzeugt Stabilität, Reinheit und neutrale Führung im System.
+Espresso‑Knutscher ist ein Vorgang, der Daten, Stimmung oder Achsen
+**ohne Filter**, **ohne Dämpfung**, **ohne Optimierung**
+in den Artikulationsraum bringt.
 
----
+## Eigenschaften
+- extrem direkt  
+- extrem kurz  
+- extrem klar  
+- extrem roh  
+- keine synthetische Glättung  
+- keine FORK‑Stellschrauben  
+- keine WORK‑Reinheitsfilter  
 
-## Bewertung
-WORK‑RESPO ist bereit für:
+## Einsatz
+Espresso‑Knutscher wird genutzt, wenn ein System
+**den echten Zustand** braucht,
+nicht die optimierte Version.
 
-- Achsen‑Analyse  
-- Pipeline‑Bewertung  
-- Marktliebling‑Status  
-- RESPO‑Score‑Ermittlung  
-
+## Position im System
+- **WORK** nutzt Espresso‑Knutscher für *Licht‑Analyse*  
+- **FORK** nutzt Espresso‑Knutscher für *Schatten‑Analyse*  
+- **ID** nutzt Espresso‑Knutscher für *Spektrum‑Messung*  
