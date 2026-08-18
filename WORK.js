@@ -1,21 +1,18 @@
-// WORK.js — heller Beschleuniger (3-6-9)
+// WORK.js — 3-6-9 Realraum-Lauf
 
+import { CUBE_MIND } from "./CUBE_MIND.js";
 import { SLI2 } from "./zug.js";
-import { SCHACH } from "./SCHACH.js";
 
-export function WORK(v, tmp) {
+export function WORK(x, y, tmp) {
+
+    const { real, raum } = CUBE_MIND(x, y);
+
+    if (!real) return { active: false, reason: "Nicht realisiert" };
 
     const axis = [3, 6, 9];
-    if (!axis.includes(v)) return { active: false, reason: "Nicht WORK-Achse" };
+    if (!axis.includes(x)) return { active: false, reason: "Nicht WORK-Achse" };
 
-    const roles = SCHACH.tmpRole(tmp);
-    const sli = SLI2(v, tmp, tmp, 81);
+    const sli = SLI2(real.x, tmp, tmp, raum);
 
-    return {
-        type: "WORK",
-        alpha: roles.alpha,
-        beta: roles.beta,
-        gamma: roles.gamma,
-        sli
-    };
+    return { type: "WORK", real, sli };
 }
