@@ -2,49 +2,90 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>WORK + FORK + SLI.raw System</title>
+    <title>DEEP Unified System — WORK + FORK + SLI.raw + RESPO + NC</title>
 </head>
 <body>
 
-<h1>WORK + FORK + SLI.raw — Unified System</h1>
-<p>System initialisiert…</p>
+<h1>DEEP Unified System</h1>
+<p>Alle Module geladen… MASTER‑Pipeline aktiv.</p>
 
 <script type="module">
 
-    /* -------------------------------------------------------
-       1. SLI.raw / SCHACH-System (dein altes System)
-       ------------------------------------------------------- */
+/* -------------------------------------------------------
+   1. SCHACH / SLI.raw Basis
+------------------------------------------------------- */
+import { AXIOM } from "./SCHACH.js";
+import { TMP } from "./kit.js";
 
-    import { AXIOM } from "./SCHACH.js";
-    import { TMP } from "./kit.js";
-
-    const frame = TMP();
-    AXIOM(frame);
-
-
-    /* -------------------------------------------------------
-       2. BIL‑3E Mind‑Station (neue Superlage)
-       ------------------------------------------------------- */
-
-    import { BIL_3E } from "./mind.bil.js";
-
-    const mind = BIL_3E(1, 2);
-    console.log("BIL‑3E Mind‑Station:", mind);
+const frame = TMP();
+AXIOM(frame);
 
 
-    /* -------------------------------------------------------
-       3. FORK‑NC Pipeline
-       LIST → SYNC → LOAD → SYSTEM → RUN → SLI
-       ------------------------------------------------------- */
+/* -------------------------------------------------------
+   2. BIL‑3E Mind‑Station
+------------------------------------------------------- */
+import { BIL_3E } from "./mind.bil.js";
+const mind = BIL_3E(3, 9);
+console.log("BIL‑3E:", mind);
 
-    import { NC_LIST } from "./nc.list.js";
-    import { NC_SYNC } from "./nc.sync.js";
-    import { NC_LOADER } from "./nc.loader.js";
-    import { NC_SYSTEM } from "./nc.system.js";
-    import { NC_RUN } from "./nc.run.js";
-    import { NC_SLI } from "./nc.sli.js";
 
-    const keys = ["W","A","S","D"];
+/* -------------------------------------------------------
+   3. WORK Learning
+------------------------------------------------------- */
+import { WORK_CSV_LEARNER } from "./WORK_CSV_LEARNER.js";
+
+async function WORK_LEARN() {
+    const csv = await fetch("./achse-modul-3.csv").then(r => r.text());
+    const result = WORK_CSV_LEARNER.pipeline(csv, { axisId: 3 });
+    console.log("WORK gelernt:", result);
+    return result;
+}
+
+
+/* -------------------------------------------------------
+   4. FORK Learning
+------------------------------------------------------- */
+import { FORK_LEARNER } from "./FORK_LEARNER.js";
+
+function FORK_LEARN() {
+    const work = { vector: { z: 1.0 } };
+    const fork = { vector: { z: -0.5 } };
+    const sli  = { vector: { z: 0.25 } };
+
+    const result = FORK_LEARNER.pipeline(work, fork, sli);
+    console.log("FORK gelernt:", result);
+    return result;
+}
+
+
+/* -------------------------------------------------------
+   5. RESPO Learning
+------------------------------------------------------- */
+import { RESPO_CSV_LEARNER } from "./RESPO_CSV_LEARNER.js";
+
+async function RESPO_LEARN() {
+    const csv = await fetch("./achse-modul-3.csv").then(r => r.text());
+    const result = RESPO_CSV_LEARNER.pipeline(csv, {
+        axis: "X",
+        narrative: "TRANS bewegt"
+    });
+    console.log("RESPO gelernt:", result);
+    return result;
+}
+
+
+/* -------------------------------------------------------
+   6. NC‑System
+------------------------------------------------------- */
+import { NC_LIST } from "./nc.list.js";
+import { NC_SYNC } from "./nc.sync.js";
+import { NC_LOADER } from "./nc.loader.js";
+import { NC_SYSTEM } from "./nc.system.js";
+import { NC_RUN } from "./nc.run.js";
+import { NC_SLI } from "./nc.sli.js";
+
+function NC_PIPELINE() {
+    const keys = ["W","A","S","D","Q","E","Y","C"];
 
     const list = NC_LIST(keys);
     const sync = NC_SYNC(list);
@@ -53,9 +94,19 @@
     const run  = NC_RUN(sys);
     const sli  = NC_SLI(run);
 
-    console.log("SLI BIOS:", sli);
+    console.log("NC SLI BIOS:", sli);
+    return sli;
+}
 
-</script>
 
-</body>
-</html>
+/* -------------------------------------------------------
+   7. DEEP Modules (CUBE_MIND, ESSENS, GOLDEN_AGE, BERMUDA)
+------------------------------------------------------- */
+import { CUBE_MIND } from "./CUBE_MIND.js";
+import { ESSENS } from "./ESSENS.js";
+import { GOLDEN_AGE } from "./GOLDEN_AGE.js";
+import { BERMUDA_ATLANTIS } from "./BERMUDA_ATLANTIS.js";
+
+const cube   = CUBE_MIND();
+const essens = ESSENS();
+const gold   = GOLDEN_AGE();
