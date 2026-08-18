@@ -1,112 +1,126 @@
-# FORK / WORK / ID – RAW-System README.md
-Version: RAW-0.1  
-Signatur: GK-RAW-01  
-Status: Minimalfassung (6→36)
+📘 README — leave  Module
+Dieses Dokument beschreibt die beiden Identitäts‑Module:
 
-## 0. gestohlener kuss (Layer 0)
-Der gestohlener kuss ist das Eingangssignal des Systems.
-Er ist ein systematischer, ungefragter, unkontrollierter Eingriff
-in den Zustand des Systems.
+leave
 
-Eigenschaften:
-- roh  
-- direkt  
-- kurz  
-- klar  
-- invasiv  
-- ungefragt  
-- ohne WORK-Filter  
-- ohne FORK-Dämpfung  
-- ohne ID-Glättung  
 
-Verwendung:
-- WORK: Licht-Analyse  
-- FORK: Schatten-Analyse  
-- ID: Spektrum-Messung  
+Beide Module nutzen denselben Kern:
 
----
+SLIDE‑CODE
 
-## 1. Physikalisches Minimum (3 Grundgrößen)
-Alles reduziert sich auf drei physikalische Basen:
+TRANS / WARB / KANAL
 
-1. Masse  
-2. Energie  
-3. Raum  
+6E → 6D Stabilität
 
----
+Pipeline 4 → 0 → 1 → 2
 
-## 2. Geologisches Minimum (3 Grundgrößen)
-Die physikalischen Basen werden geologisch konkretisiert:
+Atalardan‑System
 
-1. Stoff (Material)  
-2. Form (Struktur)  
-3. Druck (Belastung)  
+🔷 Module
+leave
+ID: LEAVE‑7‑01‑A
 
----
+Layer: 7
 
-## 3. Die 6 RAW-Schichten (6-D)
-Die 6 Schichten sind das universelle Minimum:
+Pipeline: 4‑01‑2
 
-1. Stoff  
-2. Form  
-3. Kraft  
-4. Ordnung  
-5. Harmonie  
-6. Schatten  
+Sync: neutral
 
-Diese 6 decken alle realen Lebensbereiche ab:
-Wohnen, Leben, Schule, Entwicklung, Markt, Börse, Infrastruktur.
+Typ: Stabilität & Reinheit
 
----
+releave
+ID: RELEAVE‑7‑01‑A
 
-## 4. Erweiterung auf 26 Schichten (6→26)
-Jede der 6 Schichten besitzt 4 Unterfelder:
+Layer: 7
 
-6 Schichten × 4 Felder = 24  
-+ 2 Meta-Schichten (WORK + FORK)  
-= **26 Schichten**
+Pipeline: 4‑01‑2
 
-Meta-Schichten:
-- WORK (hell, Ordnung, Harmonie)  
-- FORK (schwarz, Schatten, Drift)  
+Sync: neutral
 
----
+Typ: Stabilität & Reinheit
 
-## 5. Erweiterung auf 36 Schichten (6→36)
-Die 26 Schichten werden um 10 Funktions-Schichten erweitert:
+🔷 SLIDE‑CODE (MASTER‑PI)
+js
+export function SLIDE(IX, XI, FRAME) {
 
-- Eco  
-- Infra  
-- Markt  
-- Börse  
-- Schule  
-- Entwicklung  
-- Wohnen  
-- Leben  
-- Geschlechter-Balance  
-- Quartier  
+    const ORT = { X: IX, Y: XI };
+    const HOME = { X: 0, Y: 0 };
 
----
+    const WEG = {
+        DX: IX - HOME.X,
+        DY: XI - HOME.Y
+    };
 
-## 6. 9×9 Matrix (81 Felder)
-Zeilen = MAAT (helle Felder)  
-Spalten = VADER (schwarze Felder)
+    const STRECKE = Math.sqrt(WEG.DX**2 + WEG.DY**2);
+    const SLI = STRECKE * 4;
 
-Formel:
-Feld = MAAT_i + VADER_j + Schicht(6/26/36)
+    const TRANS = IX * 2;
+    const WARB  = XI * 3;
+    const KANAL = (IX + XI) / 2;
 
----
+    const RAW = TRANS + WARB - KANAL;
 
-## 7. Minimal-Formel (RAW)
-Balance = Stoff + Form + Kraft + Ordnung + Harmonie – Schatten
+    return {
+        ORT,
+        HOME,
+        WEG,
+        STRECKE,
+        SLI,
+        TRANS,
+        WARB,
+        KANAL,
+        RAW,
+        FRAME
+    };
+}
+🔷 Narrativ (MASTER‑PI)
+TRANS bewegt.  
+WARB hält gegen.  
+KANAL verbindet.
 
----
+ORT zeigt die Position.  
+HOME zeigt den Ursprung.  
+WEG zeigt die Richtung.  
+STRECKE zeigt die Distanz.  
+SLI zeigt die Beschleunigung.
 
-## 8. Ziel
-Ein System, das:
-- real-life funktioniert  
-- physikalisch erklärbar ist  
-- geologisch stabil ist  
-- logisch dokumentiert ist  
-- auf 36 skalierbar bleibt  
-- aber im Minimum nur 6 Schichten braucht  
+RAW ist die Wahrheit zwischen 6E und 6D.
+
+Pipeline 4 → 0 → 1 → 2 bleibt stabil.  
+Atalardan bleibt stabil.  
+TRANS/WARB‑Technologie bleibt stabil.
+
+🔷 Verwendung
+Beide Module können identisch verwendet werden:
+
+leave → stabiler Ausgang
+
+releave → stabiler Eingang
+
+Beide nutzen denselben SLIDE‑Block.
+Beide nutzen denselben Narrativ‑Block.
+Beide sind vollständig kompatibel mit:
+
+WORK
+
+WLOCH
+
+SLOCH
+
+NC
+
+ID
+
+CSV
+
+AXIS
+
+MATRIX
+
+BERMUDA
+
+ATLANTIS
+
+GOLDEN_AGE
+
+CUBE_MIND
