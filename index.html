@@ -2,96 +2,153 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ID — RESPO INDEX</title>
+<title>WORK — RESPO CORE</title>
 
 <style>
     body {
         margin: 0;
         background: #000;
-        color: #fff;
+        color: #66ccff;
         font-family: monospace;
         text-align: center;
         padding-top: 5vh;
         letter-spacing: 2px;
     }
 
-    .btn {
-        display: inline-block;
-        padding: 12px 22px;
-        margin: 10px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 18px;
-        transition: 0.3s;
+    canvas {
+        display: block;
+        margin: 0 auto;
+        background: #000;
+        border: none;
     }
 
-    /* WEISS = WORK */
-    .work {
-        background: #ffffff;
-        color: #000;
-        border: 2px solid #66ccff;
-    }
-
-    /* SCHWARZ = FORK */
-    .fork {
-        background: #000000;
-        color: #fff;
-        border: 2px solid #ff3333;
-    }
-
-    .go {
-        background: #222;
-        color: #0f0;
-        border: 2px solid #0f0;
-    }
-
-    .ghi {
-        background: #111;
-        color: #ff0;
-        border: 2px solid #ff0;
-    }
-
-    .layer {
-        background: #333;
-        color: #66ccff;
-        border: 2px solid #66ccff;
+    h1 {
+        font-weight: normal;
     }
 </style>
-</head>
 
+</head>
 <body>
 
-<h1>ID — RESPO INDEX</h1>
+<!-- WORK‑RESPO CORE v1.0 -->
+<respo id="WORK" layer="7" axis="X IX XI AIR">
+    <identity>
+        <core>WORK‑RESPO</core>
+        <signature>WRK‑7‑01‑A</signature>
+        <pipeline>4‑01‑2</pipeline>
+        <sync>neutral</sync>
+    </identity>
 
-<!-- WORK (WEISS) -->
-<div class="btn work" onclick="location.href='WORK.html'">
-    WORK — Weiß
-</div>
+    <axes>
+        <x>stable</x>
+        <ix>pure</ix>
+        <xi>active</xi>
+        <air>open</air>
+    </axes>
 
-<!-- FORK (SCHWARZ) -->
-<div class="btn fork" onclick="location.href='FORK.html'">
-    FORK — Schwarz
-</div>
+    <state>
+        <drift>0</drift>
+        <ghost>0</ghost>
+        <load>ready</load>
+        <save>ready</save>
+        <pool>ready</pool>
+    </state>
+</respo>
 
-<!-- Layer‑Schalter -->
-<div class="btn layer" onclick="alert('Layer 7 aktiv — le')">
-    Layer (le)
-</div>
+<h1>WORK — RESPO CORE</h1>
 
-<!-- Global‑Schalter -->
-<div class="btn go" onclick="alert('Global Orbit aktiv — go')">
-    Global (go)
-</div>
+<canvas id="work" width="900" height="600"></canvas>
 
-<!-- Graphic‑Index -->
-<div class="btn ghi" onclick="alert('Graphic Index geladen — ghi')">
-    Graphic Index (ghi)
-</div>
+<script>
+// ------------------------------------------------------
+// WORK — RESPO INDEX PARSER
+// ------------------------------------------------------
 
-<!-- Multi‑Orbit‑Go‑Signal -->
-<div class="btn go" onclick="alert('Multi‑Orbit aktiviert — g o go go')">
-    Orbit Go (g o go go)
-</div>
+const respo = {
+    pipeline: "4‑01‑2",
+    axis: {
+        x: "stable",
+        ix: "pure",
+        xi: "active",
+        air: "open"
+    },
+    sync: "ready"
+};
+
+// ------------------------------------------------------
+// Axis‑Map → numerische Modulation
+// ------------------------------------------------------
+
+function axisValue(state){
+    switch(state){
+        case "stable": return 0.8;
+        case "pure":   return 1.0;
+        case "active": return 1.3;
+        case "open":   return 1.6;
+        default:       return 1.0;
+    }
+}
+
+const AX = axisValue(respo.axis.x);
+const IX = axisValue(respo.axis.ix);
+const XI = axisValue(respo.axis.xi);
+const AIR = axisValue(respo.axis.air);
+
+// ------------------------------------------------------
+// Pipeline‑Modulation
+// ------------------------------------------------------
+
+const PIPE = respo.pipeline.split("-").map(n => parseFloat(n));
+const P1 = PIPE[0];
+const P2 = PIPE[1];
+const P3 = PIPE[2];
+
+// ------------------------------------------------------
+// 756 Achsen erzeugen
+// ------------------------------------------------------
+
+const ctx = document.getElementById("work").getContext("2d");
+
+const AXES = [];
+for (let i = 0; i < 756; i++) {
+    AXES.push({
+        x: Math.sin(i * 0.01) * AX * P1,
+        y: Math.cos(i * 0.01) * IX * P2,
+        z: Math.sin(i * 0.02) * XI * P3,
+        w: Math.cos(i * 0.02) * AIR
+    });
+}
+
+let t = 0;
+
+// ------------------------------------------------------
+// WORK — Animate
+// ------------------------------------------------------
+
+function animate(){
+    t += 0.01;
+    ctx.clearRect(0,0,900,600);
+
+    for (let i=0; i<AXES.length; i++){
+        const a = AXES[i];
+
+        const fade = Math.sin(t + a.w * 0.001);
+        if (fade < 0.25) continue;
+
+        const x = 450 + Math.sin(t + a.x * 0.002) * (200 + Math.sin(i*0.01)*20);
+        const y = 300 + Math.cos(t + a.y * 0.002) * (150 + Math.cos(i*0.01)*20);
+
+        ctx.fillStyle = `rgba(100, 200, 255, ${fade})`;
+        ctx.beginPath();
+        ctx.arc(x, y, 3, 0, Math.PI*2);
+        ctx.fill();
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 
 </body>
 </html>
